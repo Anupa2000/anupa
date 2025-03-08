@@ -8,8 +8,8 @@
 /* Base Body Styles */
 body {
   font-family: Arial, sans-serif; /* or your preferred font */
-  background-color: #121212;     /* Dark background for a modern look */
-  color: #ffffff;                /* White text for contrast */
+  background-color: #121212;      /* Dark background for a modern look */
+  color: #ffffff;                 /* White text for contrast */
   line-height: 1.6;
 }
 
@@ -32,13 +32,13 @@ header {
 
 /* Hamburger Menu Button - hidden on desktop */
 .menu-toggle {
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
-  display: none;
 }
 
-/* Hamburger Icon */
+/* Hamburger Icon styling */
 .menu-icon {
   display: block;
   width: 30px;
@@ -49,7 +49,7 @@ header {
 
 .menu-icon::before,
 .menu-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 30px;
   height: 3px;
@@ -65,68 +65,89 @@ header {
   top: 8px;
 }
 
-nav ul {
+/* Navigation Menu for Desktop */
+.nav-menu ul {
   display: flex;
-  justify-content: center; /* Center the nav items */
+  justify-content: center;
   list-style: none;
   padding: 1rem;
   margin: 0;
 }
 
-nav ul li {
+.nav-menu ul li {
   margin: 0 1rem;
 }
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Stack items vertically */
-    padding: 0;             /* Adjust padding as needed */
-  }
-  
-  nav ul li {
-    margin: 0.5rem 0;       /* Vertical spacing between items */
-  }
-}
 
-nav ul li a {
+.nav-menu ul li a {
   text-decoration: none;
   color: #ffffff;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+.nav-menu ul li a:hover {
   color: #f39c12;
 }
 
+/* Mobile Responsive Hamburger Menu */
+@media (max-width: 768px) {
+  /* Show hamburger button */
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* Hide the navigation menu by default on mobile */
+  .nav-menu {
+    display: none;
+    width: 100%;
+    background-color: #1d1d1d;
+  }
+  
+  /* When the menu icon is clicked and .active is toggled, show the menu */
+  .nav-menu.active {
+    display: block;
+  }
+  
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-menu ul li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+}
+
 /* Hero Section */
-/* Hero container set up as a flex container */
 .hero {
   display: flex;
-  align-items: center;         /* Vertically center the content */
-  justify-content: space-between;  /* Space out text and image */
-  min-height: 100vh;           /* Full viewport height */
+  align-items: center;          /* Vertically center the content */
+  justify-content: space-between; /* Space out text and image */
+  min-height: 100vh;            /* Full viewport height */
   padding: 2rem;
+  margin-top: 70px;             /* Offset for fixed header */
 }
 
 /* Left side text */
 .hero-text {
-  flex: 1;                   /* Take up equal space */
-  text-align: center;          /* Align text to the left */
-  padding-right: 2rem;       /* Space between text and image */
+  flex: 1;
+  text-align: center;           /* Center text by default */
+  padding-right: 2rem;          /* Space between text and image */
 }
 
 /* Right side image */
 .hero-image {
-  flex: 1;                   /* Take up equal space */
-  text-align: right;         /* Align the image to the right */
+  flex: 1;
+  text-align: right;
 }
 
 /* Style for the image */
 .hero-image img {
-  width: 800px;              /* Adjust as needed */
-  max-width: 100%;           /* Responsive image */
-  border-radius: 8px;        /* Optional rounded corners */
-  opacity: 1;              /* Slight transparency */
+  width: 800px;                 /* Adjust as needed */
+  max-width: 100%;
+  border-radius: 8px;
+  opacity: 1;
   background: transparent;
 }
 
@@ -140,7 +161,7 @@ nav ul li a:hover {
   border-radius: 4px;
   font-weight: 600;
   transition: background 0.3s ease;
-  white-space: nowrap;       /* Ensures the text stays on one line */
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -150,7 +171,7 @@ nav ul li a:hover {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column;  /* Stack text and image vertically */
+    flex-direction: column;
     text-align: center;
   }
   
@@ -163,7 +184,6 @@ nav ul li a:hover {
     text-align: center;
   }
 }
-
 
 /* Sections */
 section {
@@ -180,7 +200,6 @@ section h2 {
   color: #ffffff;
 }
 
-/* A small accent line under each section heading */
 section h2::after {
   content: "";
   display: block;
@@ -190,8 +209,9 @@ section h2::after {
   margin: 0.5rem auto 0;
 }
 
-section p, section li {
-  color: #cccccc;  /* Slightly lighter than white for readability */
+section p,
+section li {
+  color: #cccccc;
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
@@ -212,7 +232,7 @@ section ul li {
   border-radius: 4px;
 }
 
-/* Footer (If you add one) */
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
@@ -220,15 +240,15 @@ footer {
   color: #ffffff;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for wider screens */
 @media (min-width: 769px) {
   .hero {
-    flex-direction: row;       /* Place image and text side by side on wider screens */
+    flex-direction: row;
     text-align: left;
   }
   .hero-image {
-    margin-right: 2rem;        /* Space between image and text */
-    margin-bottom: 0;          /* Remove bottom margin in row layout */
+    margin-right: 2rem;
+    margin-bottom: 0;
   }
   .hero h2 {
     font-size: 4rem;
