@@ -24,7 +24,45 @@ header {
 }
 
 .navbar {
-  /* Currently empty – add a logo or brand name if desired */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* Hamburger Menu Button - hidden on desktop */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: -8px;
+}
+
+.menu-icon::after {
+  top: 8px;
 }
 
 nav ul {
